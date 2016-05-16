@@ -29,6 +29,7 @@ import static rx.Observable.just;
 public class BuildingEntityRepositoryTest {
 
     protected final TestUtils testUtils = new TestUtils();
+
     @Mock
     private IBuildingsRepository repository;
 
