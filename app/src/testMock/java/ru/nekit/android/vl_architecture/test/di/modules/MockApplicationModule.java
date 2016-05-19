@@ -1,6 +1,5 @@
 package ru.nekit.android.vl_architecture.test.di.modules;
 
-import android.app.Application;
 import android.support.annotation.NonNull;
 
 import javax.inject.Singleton;
@@ -15,20 +14,7 @@ import ru.nekit.android.vl_architecture.test.data.MockBuildingRepository;
  */
 @Module
 @Singleton
-public class ApplicationModule {
-
-    @NonNull
-    private final Application application;
-
-    public ApplicationModule(@NonNull Application application) {
-        this.application = application;
-    }
-
-    @Provides
-    @NonNull
-    public Application provideApplication() {
-        return application;
-    }
+public class MockApplicationModule {
 
     @Provides
     @NonNull

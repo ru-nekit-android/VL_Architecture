@@ -1,12 +1,17 @@
 package ru.nekit.android.vl_architecture.test;
 
+import android.support.annotation.NonNull;
+
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import ru.nekit.android.vl_architecture.domain.entity.BuildingEntity;
 import ru.nekit.android.vl_architecture.domain.repository.IBuildingsRepository;
-import ru.nekit.android.vl_architecture.test.data.MockBuildingRepository;
+import ru.nekit.android.vl_architecture.test.di.DaggerMockApplicationComponent;
 import rx.observers.TestSubscriber;
 
 import static org.junit.Assert.assertEquals;
@@ -17,10 +22,18 @@ import static org.junit.Assert.assertNotNull;
  */
 public class MockRepositoryTest {
 
+    @Inject
+    @SuppressWarnings("NullableProblems") // Initialized in @Before.
+    @NonNull
+    protected IBuildingsRepository repository;
+
+    @Before
+    public void setup() {
+        DaggerMockApplicationComponent.create().inject(this);
+    }
 
     @Test
     public void test() {
-        IBuildingsRepository repository = new MockBuildingRepository();
 
         TestSubscriber<List<BuildingEntity>> subscriber = new TestSubscriber<>();
         repository.getAllBuildings().subscribe(subscriber);
