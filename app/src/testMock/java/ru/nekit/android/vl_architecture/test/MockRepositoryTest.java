@@ -44,8 +44,7 @@ public class MockRepositoryTest {
 
         List<BuildingEntity> actualEntities = subscriber.getOnNextEvents().get(0);
         assertNotNull(actualEntities);
-        //TODO: change value in future after change builds.json
-        assertEquals(1, actualEntities.size());
+        assertEquals(4, actualEntities.size());
         BuildingEntity actualEntity = actualEntities.get(0);
         assertNotNull(actualEntity);
 

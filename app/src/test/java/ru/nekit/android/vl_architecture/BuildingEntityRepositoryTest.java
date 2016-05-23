@@ -48,8 +48,7 @@ public class BuildingEntityRepositoryTest {
     public void obtainObservableTest() {
         List<BuildingDTO> builds = asList(testUtils.getGson().fromJson(testUtils.readString("json/builds"), BuildingDTO[].class));
         assertNotNull(builds);
-        //TODO: change value in future after change builds.json
-        assertTrue(builds.size() == 1);
+        assertTrue(builds.size() == 4);
         assertNotNull(builds.get(0));
         assertNotNull(builds.get(0).getImages());
         //TODO: change value in future after change builds.json
@@ -71,13 +70,12 @@ public class BuildingEntityRepositoryTest {
 
         List<BuildingEntity> actualEntity = subscriberEntityList.getOnNextEvents().get(0);
         assertNotNull(actualEntity);
-        //TODO: change value in future after change builds.json
-        assertEquals(1, actualEntity.size());
+        assertEquals(4, actualEntity.size());
         BuildingEntity actualEntityItem = actualEntity.get(0);
 
         List<BuildingDTO> actualDTO = subscriberDTOList.getOnNextEvents().get(0);
         assertNotNull(actualDTO);
-        assertEquals(1, actualDTO.size());
+        assertEquals(4, actualDTO.size());
         //TODO: change value in future after change builds.json
         BuildingDTO actualDTOItem = actualDTO.get(0);
 
@@ -98,8 +96,7 @@ public class BuildingEntityRepositoryTest {
         repository.getAllBuildings().subscribe(subscriberEntity);
         List<BuildingEntity> actualEntity = subscriberEntity.getOnNextEvents().get(0);
         assertNotNull(actualEntity);
-        //TODO: change value in future after change builds.json
-        assertEquals(1, actualEntity.size());
+        assertEquals(4, actualEntity.size());
         BuildingEntity actualEntityItem = actualEntity.get(0);
         assertNotNull(actualEntityItem);
         verify(repository).getAllBuildings();
