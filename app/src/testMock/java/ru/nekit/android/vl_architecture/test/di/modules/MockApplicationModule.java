@@ -6,8 +6,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.nekit.android.vl_architecture.domain.repository.IBuildingsRepository;
-import ru.nekit.android.vl_architecture.test.data.MockBuildingRepository;
+import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.data.MockBuildingRepository;
 
 /**
  * Created by ru.nekit.android on 29.03.16.

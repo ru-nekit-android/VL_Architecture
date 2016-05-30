@@ -5,7 +5,12 @@ import android.support.annotation.NonNull;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import ru.nekit.android.vl_architecture.test.MockRepositoryTest;
+import ru.nekit.android.vl_architecture.di.api.BuildingsApiModule;
+import ru.nekit.android.vl_architecture.di.network.NetworkModule;
+import ru.nekit.android.vl_architecture.test.BuildingListPresenterTest;
+import ru.nekit.android.vl_architecture.test.MockDataTest;
+import ru.nekit.android.vl_architecture.test.UseCasesAndMapperTest;
+import ru.nekit.android.vl_architecture.test.di.modules.BuildingListModule;
 import ru.nekit.android.vl_architecture.test.di.modules.MockApplicationModule;
 
 /**
@@ -14,11 +19,18 @@ import ru.nekit.android.vl_architecture.test.di.modules.MockApplicationModule;
 @Singleton
 @Component(
         modules = {
-                MockApplicationModule.class
+                MockApplicationModule.class,
+                BuildingsApiModule.class,
+                NetworkModule.class,
+                BuildingListModule.class
         }
 )
 public interface MockApplicationComponent {
 
-    void inject(@NonNull MockRepositoryTest value);
+    void inject(@NonNull MockDataTest value);
+
+    void inject(@NonNull UseCasesAndMapperTest value);
+
+    void inject(@NonNull BuildingListPresenterTest value);
 
 }

@@ -7,10 +7,11 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.List;
 
-import ru.nekit.android.vl_architecture.data.dto.BuildingDTO;
-import ru.nekit.android.vl_architecture.data.mapper.BuildingDTOToBuildingEntityMapper;
-import ru.nekit.android.vl_architecture.domain.entity.BuildingEntity;
-import ru.nekit.android.vl_architecture.domain.repository.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTO;
+import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTOToBuildingEntityMapper;
+import ru.nekit.android.vl_architecture.buildingList.domain.BuildingEntity;
+import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.tools.TestUtils;
 import rx.Observable;
 import rx.observers.TestSubscriber;
 
@@ -91,15 +92,15 @@ public class BuildingEntityRepositoryTest {
 
     @Test
     public void repositoryTest() {
-        when(repository.getAllBuildings()).thenReturn(provideBuildingListObservable().map(new BuildingDTOToBuildingEntityMapper()));
+        when(repository.getBuildings()).thenReturn(provideBuildingListObservable().map(new BuildingDTOToBuildingEntityMapper()));
         TestSubscriber<List<BuildingEntity>> subscriberEntity = new TestSubscriber<>();
-        repository.getAllBuildings().subscribe(subscriberEntity);
+        repository.getBuildings().subscribe(subscriberEntity);
         List<BuildingEntity> actualEntity = subscriberEntity.getOnNextEvents().get(0);
         assertNotNull(actualEntity);
         assertEquals(4, actualEntity.size());
         BuildingEntity actualEntityItem = actualEntity.get(0);
         assertNotNull(actualEntityItem);
-        verify(repository).getAllBuildings();
+        verify(repository).getBuildings();
     }
 
 }
