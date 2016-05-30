@@ -3,11 +3,18 @@ package ru.nekit.android.vl_architecture.di.modules;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
+import com.jakewharton.picasso.OkHttp3Downloader;
+import com.squareup.picasso.Picasso;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.nekit.android.vl_architecture.domain.repository.IBuildingsRepository;
+import okhttp3.OkHttpClient;
+import ru.nekit.android.vl_architecture.model.IImageLoader;
+import ru.nekit.android.vl_architecture.model.PicassoImageLoader;
+import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.data.MockBuildingRepository;
 
 /**
  * Created by ru.nekit.android on 29.03.16.
@@ -32,7 +39,20 @@ public class ApplicationModule {
     @Provides
     @NonNull
     public IBuildingsRepository provideRepository() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new MockBuildingRepository();
     }
 
+    @Provides
+    @NonNull
+    public Picasso providePicasso(@NonNull Application application, @NonNull OkHttpClient okHttpClient) {
+        return new Picasso.Builder(application)
+                .downloader(new OkHttp3Downloader(okHttpClient))
+                .build();
+    }
+
+    @Provides
+    @NonNull
+    public IImageLoader provideImageLoader(@NonNull Picasso picasso) {
+        return new PicassoImageLoader(picasso);
+    }
 }
