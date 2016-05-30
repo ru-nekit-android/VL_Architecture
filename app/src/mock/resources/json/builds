@@ -7,9 +7,9 @@
     "description": "about building 1",
     "author": "architector of building 1",
     "images": [
-        {url: "http://somedomain.com/11", description: "11", caption: "11"},
-        {url: "http://somedomain.com/12", description: "12", caption: "12"},
-        {url: "http://somedomain.com/13", description: "13", caption: "13"}
+        {"url": "http://somedomain.com/11", "description": "11", "caption": "11"},
+        {"url": "http://somedomain.com/12", "description": "12", "caption": "12"},
+        {"url": "http://somedomain.com/13", "description": "13", "caption": "13"}
     ]
   },
   {
@@ -20,9 +20,9 @@
     "description": "about building 2",
     "author": "architector of building 2",
     "images": [
-        {url: "http://somedomain.com/21", description: "21", caption: "21"},
-        {url: "http://somedomain.com/22", description: "22", caption: "22"},
-        {url: "http://somedomain.com/23", description: "23", caption: "23"}
+        {"url": "http://somedomain.com/21", "description": "21", "caption": "21"},
+        {"url": "http://somedomain.com/22", "description": "22", "caption": "22"},
+        {"url": "http://somedomain.com/23", "description": "23", "caption": "23"}
     ]
   },
   {
@@ -33,9 +33,9 @@
     "description": "about building 3",
     "author": "architector of building 3",
     "images": [
-        {url: "http://somedomain.com/31", description: "31", caption: "31"},
-        {url: "http://somedomain.com/32", description: "32", caption: "32"},
-        {url: "http://somedomain.com/33", description: "33", caption: "33"}
+        {"url": "http://somedomain.com/31", "description": "31", "caption": "31"},
+        {"url": "http://somedomain.com/32", "description": "32", "caption": "32"},
+        {"url": "http://somedomain.com/33", "description": "33", "caption": "33"}
     ]
   },
   {
@@ -46,9 +46,9 @@
     "description": "about building 4",
     "author": "architector of building 4",
     "images": [
-        {url: "http://somedomain.com/41", description: "41", caption: "41"},
-        {url: "http://somedomain.com/42", description: "42", caption: "42"},
-        {url: "http://somedomain.com/43", description: "43", caption: "43"}
+        {"url": "http://somedomain.com/41", "description": "41", "caption": "41"},
+        {"url": "http://somedomain.com/42", "description": "42", "caption": "42"},
+        {"url": "http://somedomain.com/43", "description": "43", "caption": "43"}
     ]
   }
 ]
