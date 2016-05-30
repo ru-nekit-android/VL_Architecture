@@ -10,16 +10,16 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTO;
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTOToBuildingEntityMapper;
-import ru.nekit.android.vl_architecture.buildingList.domain.BuildingEntity;
-import ru.nekit.android.vl_architecture.buildingList.domain.RequestBuildingListUseCase;
-import ru.nekit.android.vl_architecture.buildingList.presentation.BuildingListPresenter;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingEntityToItemVOMapper;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingItemVO;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingListViewModel;
-import ru.nekit.android.vl_architecture.buildingList.presentation.view.IBuildingListView;
 import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.PresenterLifeCircleDelegate;
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTO;
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTOToBuildingEntityMapper;
+import ru.nekit.android.vl_architecture.domain.buildingList.BuildingEntity;
+import ru.nekit.android.vl_architecture.domain.buildingList.RequestBuildingListUseCase;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.BuildingListPresenter;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingEntityToItemVOMapper;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingItemVO;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingListViewModel;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.view.IBuildingListView;
 import ru.nekit.android.vl_architecture.tools.TestUtils;
 
 import static java.util.Arrays.asList;

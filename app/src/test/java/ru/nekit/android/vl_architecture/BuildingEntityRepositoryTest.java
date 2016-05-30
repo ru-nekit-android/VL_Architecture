@@ -7,10 +7,10 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.List;
 
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTO;
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTOToBuildingEntityMapper;
-import ru.nekit.android.vl_architecture.buildingList.domain.BuildingEntity;
-import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTO;
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTOToBuildingEntityMapper;
+import ru.nekit.android.vl_architecture.domain.buildingList.BuildingEntity;
+import ru.nekit.android.vl_architecture.domain.buildingList.IBuildingsRepository;
 import ru.nekit.android.vl_architecture.tools.TestUtils;
 import rx.Observable;
 import rx.observers.TestSubscriber;
@@ -52,7 +52,6 @@ public class BuildingEntityRepositoryTest {
         assertTrue(builds.size() == 4);
         assertNotNull(builds.get(0));
         assertNotNull(builds.get(0).getImages());
-        //TODO: change value in future after change builds.json
         assertTrue(builds.get(0).getImages().size() == 3);
     }
 
@@ -77,9 +76,8 @@ public class BuildingEntityRepositoryTest {
         List<BuildingDTO> actualDTO = subscriberDTOList.getOnNextEvents().get(0);
         assertNotNull(actualDTO);
         assertEquals(4, actualDTO.size());
-        //TODO: change value in future after change builds.json
-        BuildingDTO actualDTOItem = actualDTO.get(0);
 
+        BuildingDTO actualDTOItem = actualDTO.get(0);
         assertEquals(actualEntityItem.getId(), Integer.parseInt(actualDTOItem.getId()));
         assertEquals(actualEntityItem.getAuthor(), actualDTOItem.getAuthor());
         assertEquals(actualEntityItem.getDescription(), actualDTOItem.getDescription());

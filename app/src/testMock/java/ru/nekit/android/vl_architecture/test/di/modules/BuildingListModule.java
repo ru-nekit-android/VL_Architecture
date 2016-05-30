@@ -6,9 +6,9 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import ru.nekit.android.vl_architecture.buildingList.domain.RequestBuildingListUseCase;
-import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingEntityToItemVOMapper;
+import ru.nekit.android.vl_architecture.domain.buildingList.RequestBuildingListUseCase;
+import ru.nekit.android.vl_architecture.domain.buildingList.IBuildingsRepository;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingEntityToItemVOMapper;
 
 /**
  * Created by ru.nekit.android on 08.03.16.

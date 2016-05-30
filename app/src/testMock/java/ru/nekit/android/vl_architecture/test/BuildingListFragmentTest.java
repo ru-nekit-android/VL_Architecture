@@ -2,9 +2,9 @@ package ru.nekit.android.vl_architecture.test;
 
 import org.junit.Ignore;
 
-import ru.nekit.android.vl_architecture.buildingList.presentation.view.BuildingListFragment;
-import ru.nekit.android.vl_architecture.di.BuildingListComponent;
-import ru.nekit.android.vl_architecture.di.modules.BuildingListModule;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.view.BuildingListFragment;
+import ru.nekit.android.vl_architecture.presentation.di.BuildingListComponent;
+import ru.nekit.android.vl_architecture.presentation.di.modules.BuildingListModule;
 import ru.nekit.android.vl_architecture.test.tools.BaseTest;
 
 /**

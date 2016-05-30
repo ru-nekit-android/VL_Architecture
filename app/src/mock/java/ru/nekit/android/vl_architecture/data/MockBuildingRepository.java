@@ -2,11 +2,11 @@ package ru.nekit.android.vl_architecture.data;
 
 import java.util.List;
 
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTO;
+import ru.nekit.android.vl_architecture.data.buildingList.BuildingDTOToBuildingEntityMapper;
+import ru.nekit.android.vl_architecture.domain.buildingList.BuildingEntity;
+import ru.nekit.android.vl_architecture.domain.buildingList.IBuildingsRepository;
 import ru.nekit.android.vl_architecture.tools.TestUtils;
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTO;
-import ru.nekit.android.vl_architecture.buildingList.data.BuildingDTOToBuildingEntityMapper;
-import ru.nekit.android.vl_architecture.buildingList.domain.BuildingEntity;
-import ru.nekit.android.vl_architecture.buildingList.domain.IBuildingsRepository;
 import rx.Observable;
 
 import static java.util.Arrays.asList;

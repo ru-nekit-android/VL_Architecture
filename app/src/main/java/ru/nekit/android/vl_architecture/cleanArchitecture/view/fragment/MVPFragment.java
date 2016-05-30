@@ -113,4 +113,12 @@ public abstract class MVPFragment<C extends IHasPresenter<P>, P extends IMVPPres
     }
 
     protected abstract C onCreateNonConfigurationComponent();
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        inject(getComponent());
+    }
+
+    protected abstract void inject(C component);
 }

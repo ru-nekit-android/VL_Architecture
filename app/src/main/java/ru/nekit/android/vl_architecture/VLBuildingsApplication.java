@@ -4,9 +4,9 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import ru.nekit.android.vl_architecture.di.ApplicationComponent;
-import ru.nekit.android.vl_architecture.di.DaggerApplicationComponent;
-import ru.nekit.android.vl_architecture.di.modules.ApplicationModule;
+import ru.nekit.android.vl_architecture.presentation.di.ApplicationComponent;
+import ru.nekit.android.vl_architecture.presentation.di.DaggerApplicationComponent;
+import ru.nekit.android.vl_architecture.presentation.di.modules.ApplicationModule;
 import timber.log.Timber;
 
 /**

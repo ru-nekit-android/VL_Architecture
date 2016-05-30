@@ -10,10 +10,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import ru.nekit.android.vl_architecture.buildingList.domain.BuildingEntity;
-import ru.nekit.android.vl_architecture.buildingList.domain.RequestBuildingListUseCase;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingListViewModel;
-import ru.nekit.android.vl_architecture.buildingList.presentation.model.BuildingEntityToItemVOMapper;
+import ru.nekit.android.vl_architecture.domain.buildingList.BuildingEntity;
+import ru.nekit.android.vl_architecture.domain.buildingList.RequestBuildingListUseCase;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingListViewModel;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingEntityToItemVOMapper;
 import ru.nekit.android.vl_architecture.test.di.DaggerMockApplicationComponent;
 import rx.observers.TestSubscriber;
 
