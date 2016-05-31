@@ -16,6 +16,7 @@ import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.PresenterLif
 import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.persistance.ComponentControllerDelegate;
 import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.persistance.IComponentCache;
 import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.persistance.IComponentFactory;
+import ru.nekit.android.vl_architecture.cleanArchitecture.router.IRouter;
 import ru.nekit.android.vl_architecture.cleanArchitecture.view.IMVPView;
 
 /**
@@ -40,6 +41,12 @@ public abstract class MVPFragment<C extends IHasPresenter<P>, P extends IMVPPres
         IComponentCache<C> componentCache = getComponentCache();
         componentDelegate.onCreate(componentCache, savedInstanceState, componentFactory);
         presenterDelegate.onCreate(getPresenter(), savedInstanceState);
+        inject(getComponent());
+        Activity activity = getActivity();
+        if (activity instanceof IRouter) {
+            //noinspection unchecked
+            getPresenter().setRouter(getActivity());
+        }
     }
 
     @Override
@@ -83,7 +90,9 @@ public abstract class MVPFragment<C extends IHasPresenter<P>, P extends IMVPPres
         super.onDestroy();
     }
 
+
     @Override
+    @CallSuper
     @SuppressWarnings("unchecked")
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -99,6 +108,7 @@ public abstract class MVPFragment<C extends IHasPresenter<P>, P extends IMVPPres
     }
 
     @Override
+    @CallSuper
     public void onDetach() {
         super.onDetach();
         componentCache = null;
@@ -115,10 +125,15 @@ public abstract class MVPFragment<C extends IHasPresenter<P>, P extends IMVPPres
     protected abstract C onCreateNonConfigurationComponent();
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        inject(getComponent());
+    @CallSuper
+    public void onStop() {
+        super.onStop();
+        if (getActivity() instanceof IRouter) {
+            //noinspection unchecked
+            getPresenter().setRouter(null);
+        }
     }
 
     protected abstract void inject(C component);
+
 }

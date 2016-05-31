@@ -22,7 +22,6 @@ import ru.nekit.android.vl_architecture.presentation.di.scopes.BuildingListScope
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.BuildingListPresenter;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingItemVO;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.IBuildingListViewModel;
-import timber.log.Timber;
 
 @BuildingListScope
 public class BuildingListFragment extends BaseFragment<BuildingListComponent, BuildingListPresenter>
@@ -47,7 +46,9 @@ public class BuildingListFragment extends BaseFragment<BuildingListComponent, Bu
         View view = inflater.inflate(R.layout.fragment_building_list, container, false);
         mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         mAdapter = new BuildingListAdapter(getPresenter().getViewModel(), imageLoader);
-        mAdapter.setOnItemClickListener(inView -> Timber.d("Building was clicked: " + ((BuildingItemVO) inView.getTag()).getTitle()));
+        mAdapter.setOnItemClickListener(inView ->
+                getPresenter().getRouter().showBuildingDetails((BuildingItemVO) inView.getTag())
+        );
         return view;
     }
 

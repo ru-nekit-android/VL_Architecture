@@ -14,9 +14,10 @@ import butterknife.ButterKnife;
 import ru.nekit.android.vl_architecture.R;
 import ru.nekit.android.vl_architecture.presentation.common.activity.BaseActivity;
 import ru.nekit.android.vl_architecture.presentation.di.BuildingListComponent;
+import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingItemVO;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.view.BuildingListFragment;
 
-public class BuildingActivity extends BaseActivity<BuildingListComponent> {
+public class BuildingActivity extends BaseActivity<BuildingListComponent> implements IMainRouter {
 
     private static final String TAG = "fragmentTag";
     @Nullable
@@ -46,5 +47,10 @@ public class BuildingActivity extends BaseActivity<BuildingListComponent> {
             transaction.addToBackStack(null);
         }
         transaction.commit();
+    }
+
+    @Override
+    public void showBuildingDetails(BuildingItemVO building) {
+
     }
 }

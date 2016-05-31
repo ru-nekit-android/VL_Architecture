@@ -20,7 +20,7 @@ import rx.subscriptions.CompositeSubscription;
 /**
  * Created by ru.nekit.android on 04.03.16.
  */
-public class MVPPresenter<V extends IMVPView, VM extends IMVPViewModel> implements IMVPPresenter<V, VM> {
+public class MVPPresenter<V extends IMVPView, VM extends IMVPViewModel, Router> implements IMVPPresenter<V, VM, Router> {
 
     @NonNull
     private VM mViewModel;
@@ -28,6 +28,7 @@ public class MVPPresenter<V extends IMVPView, VM extends IMVPViewModel> implemen
     private BehaviorSubject<WeakReference<V>> mViewSubject;
     private BehaviorSubject<VM> mViewModelSubject;
     private WeakReference<V> mViewRef;
+    private Router mRouter;
 
     protected MVPPresenter(@NonNull VM viewModel) {
         this.mViewModel = viewModel;
@@ -70,6 +71,15 @@ public class MVPPresenter<V extends IMVPView, VM extends IMVPViewModel> implemen
     @Override
     public void onAttachView(@NonNull V view) {
 
+    }
+
+    @Nullable
+    public Router getRouter() {
+        return mRouter;
+    }
+
+    public void setRouter(@Nullable Router router) {
+        mRouter = router;
     }
 
     @CallSuper

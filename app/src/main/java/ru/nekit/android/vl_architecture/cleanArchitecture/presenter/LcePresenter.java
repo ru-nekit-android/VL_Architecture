@@ -11,7 +11,7 @@ import ru.nekit.android.vl_architecture.cleanArchitecture.view.IMVPView;
 /**
  * Created by ru.nekit.android on 16.04.16.
  */
-public abstract class LcePresenter<V extends IMVPView, VM extends IMVPViewModel> extends MVPPresenter<V, VM> implements IStateable<LceViewState> {
+public abstract class LcePresenter<V extends IMVPView, VM extends IMVPViewModel, Router> extends MVPPresenter<V, VM, Router> implements IStateable<LceViewState> {
 
     private LceViewState mConfirmedState;
 

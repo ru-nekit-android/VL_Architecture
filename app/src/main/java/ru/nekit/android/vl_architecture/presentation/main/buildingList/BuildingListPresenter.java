@@ -13,6 +13,7 @@ import ru.nekit.android.vl_architecture.cleanArchitecture.presenter.viewState.Lc
 import ru.nekit.android.vl_architecture.cleanArchitecture.utils.rx.RxTransformers;
 import ru.nekit.android.vl_architecture.domain.buildingList.RequestBuildingListUseCase;
 import ru.nekit.android.vl_architecture.presentation.di.scopes.BuildingListScope;
+import ru.nekit.android.vl_architecture.presentation.main.IMainRouter;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingEntityToItemVOMapper;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.BuildingItemVO;
 import ru.nekit.android.vl_architecture.presentation.main.buildingList.model.IBuildingListViewModel;
@@ -22,7 +23,7 @@ import ru.nekit.android.vl_architecture.presentation.main.buildingList.view.IBui
  * Created by ru.nekit.android on 02.03.16.
  */
 @BuildingListScope
-public class BuildingListPresenter extends LcePresenter<IBuildingListView, IBuildingListViewModel> {
+public class BuildingListPresenter extends LcePresenter<IBuildingListView, IBuildingListViewModel, IMainRouter> {
 
     private final BuildingEntityToItemVOMapper mMapper;
     private final RequestBuildingListUseCase mInteractor;

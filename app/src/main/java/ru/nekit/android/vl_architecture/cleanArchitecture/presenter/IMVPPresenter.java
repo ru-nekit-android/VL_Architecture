@@ -11,7 +11,7 @@ import ru.nekit.android.vl_architecture.cleanArchitecture.view.IMVPView;
 /**
  * Created by ru.nekit.android on 06.03.16.
  */
-public interface IMVPPresenter<V extends IMVPView, VM extends IMVPViewModel> {
+public interface IMVPPresenter<V extends IMVPView, VM extends IMVPViewModel, Router> {
 
     @UiThread
     void attachView(@NonNull V view);
@@ -37,4 +37,9 @@ public interface IMVPPresenter<V extends IMVPView, VM extends IMVPViewModel> {
 
     @UiThread
     void onAttachView(@NonNull V view);
+
+    @Nullable
+    Router getRouter();
+
+    void setRouter(@Nullable Router router);
 }
